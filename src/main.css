@@ -695,6 +695,9 @@
   .w-\[3rem\] {
     width: 3rem;
   }
+  .max-w-0 {
+    max-width: calc(var(--spacing) * 0);
+  }
   .max-w-2xl {
     max-width: var(--container-2xl);
   }
@@ -755,6 +758,20 @@
   .justify-items-center {
     justify-items: center;
   }
+  .space-y-3 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-8 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 8) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
   .rounded {
     border-radius: 0.25rem;
   }
@@ -788,17 +805,26 @@
   .border-\[\#28303e\] {
     border-color: #28303e;
   }
+  .bg-\[\#\#7c86ff\] {
+    background-color: ##7c86ff;
+  }
   .bg-\[\#101828\] {
     background-color: #101828;
   }
   .bg-\[\#1c2433\] {
     background-color: #1c2433;
   }
+  .bg-\[\#7c86ff\] {
+    background-color: #7c86ff;
+  }
   .bg-\[\#615fff0\] {
     background-color: #615fff0;
   }
   .bg-\[\#615fff\] {
     background-color: #615fff;
+  }
+  .bg-\[\#28303e\] {
+    background-color: #28303e;
   }
   .bg-\[\#404653\] {
     background-color: #404653;
@@ -940,6 +966,10 @@
   .text-\[20px\] {
     font-size: 20px;
   }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
   .font-black {
     --tw-font-weight: var(--font-weight-black);
     font-weight: var(--font-weight-black);
@@ -975,6 +1005,27 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .hover\:bg-\[\#7c86ff\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #7c86ff;
+      }
+    }
+  }
+  .hover\:bg-\[\#28303e\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #28303e;
+      }
+    }
+  }
+  .hover\:bg-\[\#404653\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #404653;
+      }
+    }
   }
   .focus\:bg-\[\#615fff\] {
     &:focus {
@@ -1070,10 +1121,24 @@
   inherits: false;
   initial-value: skewY(0);
 }
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-leading {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-font-weight {
   syntax: "*";
